@@ -7,13 +7,13 @@
 Summary:	Library to handle international phone numbers
 Summary(pl.UTF-8):	Biblioteka do obsługi międzynarodowych numerów telefonów
 Name:		libphonenumber
-Version:	8.12.16
-Release:	2
+Version:	8.12.29
+Release:	1
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
 Source0:	https://github.com/google/libphonenumber/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	4ac2e000b8e48481b11cae16d4708b4d
+# Source0-md5:	4388c39a5056701f2f85fa9fe77c1763
 Patch0:		%{name}-link.patch
 URL:		https://github.com/google/libphonenumber/
 BuildRequires:	boost-devel >= 1.40.0
