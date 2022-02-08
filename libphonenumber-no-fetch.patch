@@ -41,3 +41,14 @@
  # Safeguarding against any potential link errors as mentioned in
  # https://github.com/abseil/abseil-cpp/issues/225
  set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
+--- libphonenumber-8.12.42/cpp/CMakeLists.txt.orig	2022-02-08 21:57:33.440581630 +0100
++++ libphonenumber-8.12.42/cpp/CMakeLists.txt	2022-02-08 22:20:13.587822822 +0100
+@@ -18,7 +18,7 @@ cmake_minimum_required (VERSION 3.11)
+ 
+ # Pick the C++ standard to compile with.
+ # Abseil currently supports C++11, C++14, and C++17.
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ project (libphonenumber)

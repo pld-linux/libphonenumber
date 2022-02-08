@@ -23,7 +23,7 @@ BuildRequires:	cmake >= 2.8.5
 BuildRequires:	gtest-devel
 BuildRequires:	jre
 BuildRequires:	libicu-devel >= 4.4
-BuildRequires:	libstdc++-devel
+BuildRequires:	libstdc++-devel >= 6:7
 BuildRequires:	pkgconfig
 BuildRequires:	protobuf-devel >= 2.4
 %{?with_re2:BuildRequires:	re2-devel}
