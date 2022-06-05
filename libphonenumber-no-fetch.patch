@@ -31,24 +31,8 @@
  
  find_or_build_gtest ()
  set (
---- libphonenumber-8.12.46/cpp/CMakeLists.txt.orig	2022-02-08 21:04:15.984964451 +0100
-+++ libphonenumber-8.12.46/cpp/CMakeLists.txt	2022-02-08 21:08:15.033998716 +0100
-@@ -474,10 +474,11 @@ if (${USE_POSIX_THREAD} STREQUAL "ON" OR
-   endif()
- endif ()
- 
-+find_package(absl REQUIRED COMPONENTS hash raw_hash_set strings synchronization)
- # Safeguarding against any potential link errors as mentioned in
- # https://github.com/abseil/abseil-cpp/issues/225
- set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
--list (APPEND LIBRARY_DEPS absl::strings)
-+list (APPEND LIBRARY_DEPS absl::hash absl::raw_hash_set absl::strings)
- list (APPEND COMMON_DEPS absl::synchronization)
- 
- if (APPLE)
-   list (APPEND COMMON_DEPS ${COREFOUNDATION_LIB} ${FOUNDATION_LIB})
---- libphonenumber-8.12.42/cpp/CMakeLists.txt.orig	2022-02-08 21:57:33.440581630 +0100
-+++ libphonenumber-8.12.42/cpp/CMakeLists.txt	2022-02-08 22:20:13.587822822 +0100
+--- libphonenumber-8.12.49/cpp/CMakeLists.txt.orig	2022-06-05 20:00:44.936971698 +0200
++++ libphonenumber-8.12.49/cpp/CMakeLists.txt	2022-06-05 20:09:04.854263413 +0200
 @@ -18,7 +18,7 @@ cmake_minimum_required (VERSION 3.11)
  
  # Pick the C++ standard to compile with.
@@ -58,3 +42,11 @@
  set(CMAKE_CXX_STANDARD_REQUIRED ON)
  
  project (libphonenumber)
+@@ -474,6 +474,7 @@ if (${USE_POSIX_THREAD} STREQUAL "ON" OR
+   endif()
+ endif ()
+ 
++find_package(absl REQUIRED COMPONENTS node_hash_set strings synchronization)
+ # Safeguarding against any potential link errors as mentioned in
+ # https://github.com/abseil/abseil-cpp/issues/225
+ set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
