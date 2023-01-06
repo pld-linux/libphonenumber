@@ -28,6 +28,7 @@ BuildRequires:	libstdc++-devel >= 6:7
 BuildRequires:	pkgconfig
 BuildRequires:	protobuf-devel >= 2.4
 %{?with_re2:BuildRequires:	re2-devel}
+BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
