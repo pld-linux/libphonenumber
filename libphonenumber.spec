@@ -20,7 +20,7 @@ Patch2:		no-static.patch
 URL:		https://github.com/google/libphonenumber/
 BuildRequires:	abseil-cpp-devel
 BuildRequires:	boost-devel >= 1.40.0
-BuildRequires:	cmake >= 2.8.5
+BuildRequires:	cmake >= 3.11
 BuildRequires:	gtest-devel
 BuildRequires:	jre
 BuildRequires:	libicu-devel >= 4.4
