@@ -1,11 +1,11 @@
---- libphonenumber-8.12.2/cpp/CMakeLists.txt.orig	2020-04-22 12:05:08.000000000 +0200
-+++ libphonenumber-8.12.2/cpp/CMakeLists.txt	2020-04-29 06:39:39.838900132 +0200
-@@ -442,7 +442,7 @@
-   # Note that the subset of base/ on which the geocoder relies is implemented
-   # on top of Boost header-only libraries (e.g. scoped_ptr.hpp).
-   target_link_libraries (geocoding ${LIBRARY_DEPS})
--  target_link_libraries (geocoding-shared ${LIBRARY_DEPS})
-+  target_link_libraries (geocoding-shared phonenumber-shared ${LIBRARY_DEPS})
- endif ()
+--- libphonenumber-8.13.8/cpp/CMakeLists.txt.orig	2020-04-22 12:05:08.000000000 +0200
++++ libphonenumber-8.13.8/cpp/CMakeLists.txt	2020-04-29 06:39:39.838900132 +0200
+@@ -499,7 +499,7 @@ if (BUILD_SHARED_LIBS)
  
- # Build a specific library for testing purposes.
+   if (BUILD_GEOCODER)
+     add_library (geocoding-shared SHARED ${GEOCODING_SOURCES})
+-    target_link_libraries (geocoding-shared ${LIBRARY_DEPS})
++    target_link_libraries (geocoding-shared phonenumber-shared ${LIBRARY_DEPS})
+     target_include_directories(geocoding-shared PUBLIC $<INSTALL_INTERFACE:include>)
+     add_dependencies (geocoding-shared generate_geocoding_data)
+     add_dependencies (phonenumber-shared generate_geocoding_data)
