@@ -10,7 +10,7 @@ Name:		libphonenumber
 # note: 8.13.23 doesn't include tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar
 # and requires building it by maven(?)
 Version:	8.13.22
-Release:	1
+Release:	2
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
@@ -47,6 +47,7 @@ Summary:	Header files for libphonenumber library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libphonenumber
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	abseil-cpp-devel
 Requires:	boost-devel >= 1.40.0
 Requires:	libicu-devel
 Requires:	libstdc++-devel
