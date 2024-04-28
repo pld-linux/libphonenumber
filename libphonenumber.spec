@@ -7,15 +7,16 @@
 Summary:	Library to handle international phone numbers
 Summary(pl.UTF-8):	Biblioteka do obsługi międzynarodowych numerów telefonów
 Name:		libphonenumber
-# note: 8.13.23 doesn't include tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar
-# and requires building it by maven(?)
-Version:	8.13.22
-Release:	2
+# when upgrading, check if new version contains
+# tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar (or similar)
+# some releases don't contain that file and requires building it by maven
+Version:	8.13.35
+Release:	1
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
 Source0:	https://github.com/google/libphonenumber/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	50a7448cabf738d65b30abca9b51f947
+# Source0-md5:	a1abb183d85fc1dcceffe24007a459c4
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-no-fetch.patch
 Patch2:		no-static.patch
