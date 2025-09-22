@@ -34,6 +34,9 @@ BuildRequires:	protobuf-devel >= 2.4
 BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# avoid false postive for tls var coming from protobuf
+%define		skip_post_check_so	libphonenumber.so.*
+
 %description
 Google's common C++ library for parsing, formatting, storing and
 validating international phone numbers.
