@@ -10,13 +10,13 @@ Name:		libphonenumber
 # when upgrading, check if new version contains
 # tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar (or similar)
 # some releases don't contain that file and requires building it by maven
-Version:	8.13.55
-Release:	2
+Version:	9.0.23
+Release:	1
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
 Source0:	https://github.com/google/libphonenumber/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	8b7adb73e1f2d0504b150ae9d3eaada8
+# Source0-md5:	c36563a27bda76ca950686f5f2a7dbc9
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-no-fetch.patch
 Patch2:		no-static.patch
@@ -87,7 +87,8 @@ cd build/cpp
 %cmake ../../cpp \
 	%{!?with_static_libs:-DBUILD_STATIC_LIB=OFF} \
 	-DCMAKE_CXX_STANDARD=17 \
-	%{?with_re2:-DUSE_RE2=ON}
+	%{?with_re2:-DUSE_RE2=ON} \
+	-DUSE_STD_MAP=ON
 
 %{__make}
 
@@ -106,10 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS CONTRIBUTORS FALSEHOODS.md FAQ.md LICENSE.Chromium README.md release_notes.txt cpp/{LICENSE,README}
-%attr(755,root,root) %{_libdir}/libgeocoding.so.*.*
-%ghost %{_libdir}/libgeocoding.so.8
-%attr(755,root,root) %{_libdir}/libphonenumber.so.*.*
-%ghost %{_libdir}/libphonenumber.so.8
+%{_libdir}/libgeocoding.so.*.*
+%ghost %{_libdir}/libgeocoding.so.9
+%{_libdir}/libphonenumber.so.*.*
+%ghost %{_libdir}/libphonenumber.so.9
 
 %files devel
 %defattr(644,root,root,755)
