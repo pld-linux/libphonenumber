@@ -3,7 +3,9 @@
 # Conditional build:
 %bcond_with	re2		# RE2 regular expressions engine (broken as of 8.12.2)
 %bcond_without	static_libs	# static libraries
-#
+
+%{?use_default_jdk}
+
 Summary:	Library to handle international phone numbers
 Summary(pl.UTF-8):	Biblioteka do obsługi międzynarodowych numerów telefonów
 Name:		libphonenumber
@@ -11,7 +13,7 @@ Name:		libphonenumber
 # tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar (or similar)
 # some releases don't contain that file and requires building it by maven
 Version:	9.0.32
-Release:	1
+Release:	2
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
@@ -25,13 +27,13 @@ BuildRequires:	abseil-cpp-devel
 BuildRequires:	boost-devel >= 1.40.0
 BuildRequires:	cmake >= 3.11
 BuildRequires:	gtest-devel
-BuildRequires:	jre
+%buildrequires_jdk
 BuildRequires:	libicu-devel >= 4.4
 BuildRequires:	libstdc++-devel >= 6:7
 BuildRequires:	pkgconfig
 BuildRequires:	protobuf-devel >= 2.4
 %{?with_re2:BuildRequires:	re2-devel}
-BuildRequires:	rpmbuild(macros) >= 1.605
+BuildRequires:	rpmbuild(macros) >= 2.021
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # avoid false postive for tls var coming from protobuf
@@ -87,6 +89,7 @@ cd build/cpp
 %cmake ../../cpp \
 	%{!?with_static_libs:-DBUILD_STATIC_LIB=OFF} \
 	-DCMAKE_CXX_STANDARD=17 \
+	-DJAVA_BIN:FILEPATH="%java" \
 	%{?with_re2:-DUSE_RE2=ON} \
 	-DUSE_STD_MAP=ON
 
