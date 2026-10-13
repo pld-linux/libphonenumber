@@ -1,7 +1,7 @@
 # TODO: java package
 #
 # Conditional build:
-%bcond_with	re2		# RE2 regular expressions engine (broken as of 8.12.2)
+%bcond_with	re2		# RE2 regular expressions engine (broken as of 8.12.2-9.0.41)
 %bcond_without	static_libs	# static libraries
 
 %{?use_default_jdk}
@@ -12,13 +12,13 @@ Name:		libphonenumber
 # when upgrading, check if new version contains
 # tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar (or similar)
 # some releases don't contain that file and requires building it by maven
-Version:	9.0.34
+Version:	9.0.41
 Release:	1
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
 Source0:	https://github.com/google/libphonenumber/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	6e4881938f6066bb90d5a59c5101c77b
+# Source0-md5:	91cae80224dafadb7070a3c1e386e8e9
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-no-fetch.patch
 Patch2:		no-static.patch
