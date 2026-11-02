@@ -12,13 +12,13 @@ Name:		libphonenumber
 # when upgrading, check if new version contains
 # tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar (or similar)
 # some releases don't contain that file and requires building it by maven
-Version:	9.0.41
+Version:	9.0.42
 Release:	1
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
 Source0:	https://github.com/google/libphonenumber/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	91cae80224dafadb7070a3c1e386e8e9
+# Source0-md5:	32a1f2d72342ea720241f27e49f8185a
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-no-fetch.patch
 Patch2:		no-static.patch
