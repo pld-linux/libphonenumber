@@ -1,0 +1,11 @@
+--- libphonenumber-9.0.41/cpp/CMakeLists.txt.orig	2026-11-02 14:21:08.558713141 +0100
++++ libphonenumber-9.0.41/cpp/CMakeLists.txt	2026-11-02 14:27:05.660957766 +0100
+@@ -418,7 +418,7 @@
+ endif ()
+ 
+ if (NOT WIN32)
+-  add_definitions ("-Wall -Werror")
++  add_definitions ("-Wall")
+ endif ()
+ 
+ include_directories ("src")

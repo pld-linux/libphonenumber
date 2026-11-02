@@ -22,6 +22,7 @@ Source0:	https://github.com/google/libphonenumber/archive/v%{version}/%{name}-%{
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-no-fetch.patch
 Patch2:		no-static.patch
+Patch3:		disable-werror.patch
 URL:		https://github.com/google/libphonenumber/
 BuildRequires:	abseil-cpp-devel
 BuildRequires:	boost-devel >= 1.40.0
@@ -82,6 +83,7 @@ Statyczne biblioteki libphonenumber.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
+%patch -P3 -p1
 
 %build
 install -d build/cpp
