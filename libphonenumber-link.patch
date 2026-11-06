@@ -1,5 +1,14 @@
 --- libphonenumber-8.13.8/cpp/CMakeLists.txt.orig	2020-04-22 12:05:08.000000000 +0200
 +++ libphonenumber-8.13.8/cpp/CMakeLists.txt	2020-04-29 06:39:39.838900132 +0200
+@@ -427,7 +427,7 @@ include_directories ("src")
+ # Collate dependencies
+ #----------------------------------------------------------------
+ 
+-set (LIBRARY_DEPS ${ICU_LIB} ${PROTOBUF_LIB} absl::node_hash_set absl::strings absl::synchronization)
++set (LIBRARY_DEPS ${ICU_LIB} ${PROTOBUF_LIB} absl::node_hash_set absl::strings absl::synchronization absl::log_internal_check_op)
+ 
+ if (USE_BOOST)
+   list (APPEND LIBRARY_DEPS ${Boost_LIBRARIES})
 @@ -499,7 +499,7 @@ if (BUILD_SHARED_LIBS)
  
    if (BUILD_GEOCODER)

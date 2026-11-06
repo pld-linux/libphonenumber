@@ -5,7 +5,7 @@
  
  # Find all the required libraries and programs.
 -find_package(absl)
-+find_package(absl REQUIRED COMPONENTS node_hash_set strings synchronization)
++find_package(absl REQUIRED COMPONENTS node_hash_set strings synchronization log_internal_check_op)
  
  if(NOT absl_FOUND)
    # Overide abseil install rules for subprojects
