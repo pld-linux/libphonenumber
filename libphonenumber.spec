@@ -13,7 +13,7 @@ Name:		libphonenumber
 # tools/java/cpp-build/target/cpp-build-1.0-SNAPSHOT-jar-with-dependencies.jar (or similar)
 # some releases don't contain that file and requires building it by maven
 Version:	9.0.42
-Release:	1
+Release:	2
 License:	Apache v2.0 with BSD parts
 Group:		Libraries
 #Source0Download: https://github.com/google/libphonenumber/releases/
